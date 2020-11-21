@@ -59,7 +59,7 @@ int DeadLockDetection_func(vector<std::vector<int>> &graph, int init, int dest)
 }
 
 int main() {
-	int pid_probe;		//Proccess ID of the proccess initiating the probe
+	int processIdForProbe;		//Proccess ID of the proccess initiating the probe
 	
 	cout << "Enter the number of processes ####The value should be greater than 1####" << endl;		//Enter the number of proccesses in the system
 	cin >> numOfProccesses;
@@ -87,9 +87,9 @@ int main() {
 		cout << endl;
 
 		cout << "Enter the Proccess Number intiating the Probe ####The number should be between 1 and numOfProccesses####" << endl;	//Enter the proccess initiating the probe
-		cin >> pid_probe;
+		cin >> processIdForProbe;
 		cout << endl;
-		pid_probe--;
+		processIdForProbe--;
 
 		
 		cout << "Initiating Probe !!!" << endl << endl;	//Initializing the probe to detect deadlock
@@ -100,9 +100,9 @@ int main() {
 		deadLock = detected;
 		for (int col = 0; col < numOfProccesses; col++)
 		{
-			if (wait_graph.at(pid_probe).at(col) == 1)
+			if (wait_graph.at(processIdForProbe).at(col) == 1)
 			{
-				if (DeadLockDetection_func(wait_graph, pid_probe, col) == notDetected){
+				if (DeadLockDetection_func(wait_graph, processIdForProbe, col) == notDetected){
 					deadLock = notDetected;
 					cout<<"Deadlock not detected ";
 					break;
