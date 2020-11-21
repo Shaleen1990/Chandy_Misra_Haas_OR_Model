@@ -36,8 +36,7 @@ Enter the wait graph >>
 ###Output >>
                                                                                                                                         
 The wait for graph is >>                                                                                                                
-                                                                                                                                        
-        S1      S2      S3                                                                                                              
+        S1      S2      S3                                                                                                                                                                                                                                  
 S1      1       0       0                                                                                                               
 S2      1       1       0                                                                                                               
 S3      0       0       1                                                                                                               
@@ -80,9 +79,8 @@ Enter the wait graph >>
    
 
 
-The wait for graph is >>                                                                                                                
-                                                                                                                                        
-        S1      S2      S3      S4                                                                                                      
+The wait for graph is >>
+        S1      S2      S3      S4                                                                                                                                                                                                                   
 S1      1       0       0       0                                                                                                       
 S2      1       1       0       0                                                                                                       
 S3      1       0       0       1                                                                                                       
@@ -101,6 +99,6 @@ Press ENTER to exit console.
 
 
 
-### You Can also find the Screenshots for the implemented Algorithm in the "Output" Folder
+#### You Can also find the Screenshots for the implemented Algorithm in the "Output" Folder
 
 
