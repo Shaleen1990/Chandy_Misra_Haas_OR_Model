@@ -1,9 +1,11 @@
 # Chandy_Misra_Haas_OR_Model
 
 The Program is written using DEV C++.
+
+
 ###################Steps For Execution###################
 
-1. Execute the code directly from Chandy_Misra_Haas_OR_Model.exe file.
+1. Execute the code i.e. Chandy_Misra_Haas_OR_Model.cpp file.
 
 2. Enter the number of processes ###The value should be greater than 1###.
 
@@ -13,5 +15,6 @@ The Program is written using DEV C++.
 
 5. Press any key to exit.
 
-Output
-You Can Find the output Screenshots in the folder
+####Output####
+
+You Can Find the Screenshots for the implemented Algorithm in the "Output" Folder
