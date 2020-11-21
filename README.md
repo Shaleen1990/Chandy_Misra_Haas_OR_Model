@@ -36,7 +36,7 @@ Enter the wait graph >>
 ###Output >>
                                                                                                                                         
 The wait for graph is >>                                                                                                                
-        S1      S2      S3                                                                                                                                                                                                                                  
+XX      S1      S2      S3                                                                                                                                                                                                                                  
 S1      1       0       0                                                                                                               
 S2      1       1       0                                                                                                               
 S3      0       0       1                                                                                                               
@@ -79,8 +79,8 @@ Enter the wait graph >>
    
 
 
-The wait for graph is >>
-        S1      S2      S3      S4                                                                                                                                                                                                                   
+The wait for graph is >>                                                                                                                                                                                         
+XX      S1      S2      S3      S4                                                                                                                                                                                                                   
 S1      1       0       0       0                                                                                                       
 S2      1       1       0       0                                                                                                       
 S3      1       0       0       1                                                                                                       
