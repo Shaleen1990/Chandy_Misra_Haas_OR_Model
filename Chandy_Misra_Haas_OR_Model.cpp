@@ -13,6 +13,51 @@ int numOfProccesses;		//Variable : Number of proccesses in the system
 bool deadLock = 0;	//Boolean Variable : 0 for false, 1 for true
 
 
+void getGraph(vector<vector<int>> wait_graph)
+{
+	int n = wait_graph.at(0).size();
+	int m = wait_graph.size();
+	
+	cout << "\t";
+	for (int j = 0; j < m; j++) {
+		cout << "S" << (j + 1) << "\t";
+	}
+	cout << endl;	
+
+	for (int i = 0; i<m; i++)
+	{
+		cout << "S" << (i + 1) << "\t";
+		for (int j = 0; j<n; j++)
+		{
+			cout << wait_graph.at(i).at(j) << "\t";
+		}
+		cout << "\n";
+	}
+}
+
+int DeadLockDetection_func(vector<std::vector<int>> &graph, int init, int dest)
+{
+	int end = numOfProccesses;
+	deadLock = notDetected;
+	for (int col = 0; col < end; col++)
+	{
+		if (graph[dest][col] == 1)
+		{
+			if (init == col)
+			{
+				deadLock = detected;
+				continue;
+			}
+			deadLock = DeadLockDetection_func(graph, init, col);
+			//if single path found without any deadlock then there is no deadlock
+			if (deadLock == notDetected) {
+				return deadLock;
+			}
+		}
+	}
+	return deadLock;
+}
+
 int main() {
 	int pid_probe;		//Proccess ID of the proccess initiating the probe
 	
@@ -73,50 +118,5 @@ int main() {
 	}
 	getch();
 	return 0;
-}
-
-void getGraph(vector<vector<int>> wait_graph)
-{
-	int n = wait_graph.at(0).size();
-	int m = wait_graph.size();
-	
-	cout << "\t";
-	for (int j = 0; j < m; j++) {
-		cout << "S" << (j + 1) << "\t";
-	}
-	cout << endl;	
-
-	for (int i = 0; i<m; i++)
-	{
-		cout << "S" << (i + 1) << "\t";
-		for (int j = 0; j<n; j++)
-		{
-			cout << wait_graph.at(i).at(j) << "\t";
-		}
-		cout << "\n";
-	}
-}
-
-int DeadLockDetection_func(vector<std::vector<int>> &graph, int init, int dest)
-{
-	int end = numOfProccesses;
-	deadLock = notDetected;
-	for (int col = 0; col < end; col++)
-	{
-		if (graph[dest][col] == 1)
-		{
-			if (init == col)
-			{
-				deadLock = detected;
-				continue;
-			}
-			deadLock = DeadLockDetection_func(graph, init, col);
-			//if single path found without any deadlock then there is no deadlock
-			if (deadLock == notDetected) {
-				return deadLock;
-			}
-		}
-	}
-	return deadLock;
 }
 
